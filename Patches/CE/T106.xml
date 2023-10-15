@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Combat Extended</li>
+		</mods>
+
+		<match Class="PatchOperationSequence">
+			<operations>
+				<!-- Turret -->
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Vehicles.VehicleTurretDef[defName="Duel_106mm_recoilless"]/projectile</xpath>
+					<value>
+						<projectile>Bullet_105x607mmRCannonShell_HEAT</projectile>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Vehicles.VehicleTurretDef[defName="Duel_106mm_recoilless"]/chargePerAmmoCount</xpath>
+					<value>
+						<chargePerAmmoCount>1</chargePerAmmoCount>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Vehicles.VehicleTurretDef[defName="Duel_106mm_recoilless"]/reloadTimer</xpath>
+					<value>
+						<reloadTimer>13</reloadTimer>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Vehicles.VehicleTurretDef[defName="Duel_106mm_recoilless"]/warmUpTimer</xpath>
+					<value>
+						<warmUpTimer>2.3</warmUpTimer>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Vehicles.VehicleTurretDef[defName="Duel_106mm_recoilless"]/magazineCapacity</xpath>
+					<value>
+						<magazineCapacity>2</magazineCapacity>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Vehicles.VehicleTurretDef[defName="Duel_106mm_recoilless"]/genericAmmo</xpath>
+					<value>
+						<genericAmmo>false</genericAmmo>
+					</value>
+				</li>
+
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/Vehicles.VehicleTurretDef[defName="Duel_106mm_recoilless"]/projectileShifting</xpath>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Vehicles.VehicleTurretDef[defName="Duel_106mm_recoilless"]/maxRange</xpath>
+					<value>
+						<maxRange>75</maxRange>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Vehicles.VehicleTurretDef[defName="Duel_106mm_recoilless"]/ammunition/thingDefs</xpath>
+					<value>
+						<thingDefs>
+							<li>Ammo_105x607mmRCannonShell_HEAT</li>
+							<li>Ammo_105x607mmRCannonShell_HE</li>
+							<li MayRequire="Aoba.Fortress.Industrial.NuclearDawn">Ammo_105x607mmRCannonShell_FT_Nuke</li>
+						</thingDefs>
+					</value>
+				</li>
+
+				<li Class="PatchOperationAddModExtension">
+					<xpath>Defs/Vehicles.VehicleTurretDef[defName="Duel_106mm_recoilless"]</xpath>
+					<value>
+						<li Class="Vehicles.CETurretDataDefModExtension">
+							<ammoSet>AmmoSet_105x607mmRCannonShell</ammoSet>
+							<shotHeight>1.9</shotHeight>
+							<speed>107</speed>
+							<sway>1.55</sway>
+							<spread>0.01</spread>
+						</li>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Vehicles.VehicleTurretDef[defName="Duel_106mm_recoilless"]/fireModes</xpath>
+					<value>
+						<fireModes>
+							<li>
+								<shotsPerBurst>2</shotsPerBurst>
+								<ticksBetweenShots>15</ticksBetweenShots>
+								<ticksBetweenBursts>60</ticksBetweenBursts>
+								<label>Burst</label>
+								<texPath>UI/Gizmos/FireRate_Burst</texPath>
+							</li>
+							<li>
+								<shotsPerBurst>1</shotsPerBurst>
+								<ticksBetweenShots>2</ticksBetweenShots>
+								<ticksBetweenBursts>60</ticksBetweenBursts>
+								<label>Single</label>
+								<texPath>UI/Gizmos/FireRate_Single</texPath>
+							</li>
+						</fireModes>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>
+						Defs/Vehicles.VehicleDef[defName="OTO_R3_106mm"]/vehicleStats/CargoCapacity</xpath>
+					<value>
+						<CargoCapacity>227</CargoCapacity>
+					</value>
+				</li>
+				
+				<!-- Vehicle -->
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Vehicles.VehicleDef[defName="OTO_R3_106mm"]/statBases/ArmorRating_Blunt</xpath>
+					<value>
+						<ArmorRating_Blunt>36</ArmorRating_Blunt>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Vehicles.VehicleDef[defName="OTO_R3_106mm"]/statBases/ArmorRating_Sharp</xpath>
+					<value>
+						<ArmorRating_Sharp>8</ArmorRating_Sharp>
+					</value>
+				</li>
+				
+				<!-- Vehicle Parts-->
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Vehicles.VehicleDef[defName="OTO_R3_106mm"]/components/li[key="EngineHood"]/armor/ArmorRating_Sharp</xpath>
+					<value>
+						<ArmorRating_Sharp>4</ArmorRating_Sharp>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Vehicles.VehicleDef[defName="OTO_R3_106mm"]/components/li[key="EngineHood"]/armor/ArmorRating_Blunt</xpath>
+					<value>
+						<ArmorRating_Blunt>16</ArmorRating_Blunt>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Vehicles.VehicleDef[defName="OTO_R3_106mm"]/components/li[key="EngineHood"]/health</xpath>
+					<value>
+						<health>80</health>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Vehicles.VehicleDef[defName="OTO_R3_106mm"]/components/li[key="LeftDoorPanel"]/armor/ArmorRating_Sharp</xpath>
+					<value>
+						<ArmorRating_Sharp>4</ArmorRating_Sharp>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Vehicles.VehicleDef[defName="OTO_R3_106mm"]/components/li[key="LeftDoorPanel"]/armor/ArmorRating_Blunt</xpath>
+					<value>
+						<ArmorRating_Blunt>16</ArmorRating_Blunt>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Vehicles.VehicleDef[defName="OTO_R3_106mm"]/components/li[key="RightDoorPanel"]/armor/ArmorRating_Sharp</xpath>
+					<value>
+						<ArmorRating_Sharp>4</ArmorRating_Sharp>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Vehicles.VehicleDef[defName="OTO_R3_106mm"]/components/li[key="RightDoorPanel"]/armor/ArmorRating_Blunt</xpath>
+					<value>
+						<ArmorRating_Blunt>16</ArmorRating_Blunt>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Vehicles.VehicleDef[defName="OTO_R3_106mm"]/components/li[key="Roof"]/armor/ArmorRating_Sharp</xpath>
+					<value>
+						<ArmorRating_Sharp>15</ArmorRating_Sharp>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Vehicles.VehicleDef[defName="OTO_R3_106mm"]/components/li[key="Roof"]/armor/ArmorRating_Blunt</xpath>
+					<value>
+						<ArmorRating_Blunt>310</ArmorRating_Blunt>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Vehicles.VehicleDef[defName="OTO_R3_106mm"]/components/li[key="Roof"]/health</xpath>
+					<value>
+						<health>75</health>
+					</value>
+				</li>
+				
+				<!-- Armor section -->
+				
+				<!-- FrontArmor -->
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Vehicles.VehicleDef[defName="OTO_R3_106mm"]/components/li[key="FrontArmorPlating"]/armor/ArmorRating_Sharp</xpath>
+					<value>
+						<ArmorRating_Sharp>33</ArmorRating_Sharp>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Vehicles.VehicleDef[defName="OTO_R3_106mm"]/components/li[key="FrontArmorPlating"]/armor/ArmorRating_Blunt</xpath>
+					<value>
+						<ArmorRating_Blunt>310</ArmorRating_Blunt>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Vehicles.VehicleDef[defName="OTO_R3_106mm"]/components/li[key="FrontArmorPlating"]/health</xpath>
+					<value>
+						<health>225</health>
+					</value>
+				</li>
+				
+				<!-- Rear -->
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Vehicles.VehicleDef[defName="OTO_R3_106mm"]/components/li[key="RearArmorPlating"]/armor/ArmorRating_Sharp</xpath>
+					<value>
+						<ArmorRating_Sharp>17</ArmorRating_Sharp>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Vehicles.VehicleDef[defName="OTO_R3_106mm"]/components/li[key="RearArmorPlating"]/armor/ArmorRating_Blunt</xpath>
+					<value>
+						<ArmorRating_Blunt>310</ArmorRating_Blunt>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Vehicles.VehicleDef[defName="OTO_R3_106mm"]/components/li[key="RearArmorPlating"]/health</xpath>
+					<value>
+						<health>200</health>
+					</value>
+				</li>
+				
+				<!-- Left -->
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Vehicles.VehicleDef[defName="OTO_R3_106mm"]/components/li[key="LeftArmorPlating"]/armor/ArmorRating_Sharp</xpath>
+					<value>
+						<ArmorRating_Sharp>17</ArmorRating_Sharp>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Vehicles.VehicleDef[defName="OTO_R3_106mm"]/components/li[key="LeftArmorPlating"]/armor/ArmorRating_Blunt</xpath>
+					<value>
+						<ArmorRating_Blunt>310</ArmorRating_Blunt>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Vehicles.VehicleDef[defName="OTO_R3_106mm"]/components/li[key="LeftArmorPlating"]/health</xpath>
+					<value>
+						<health>225</health>
+					</value>
+				</li>
+				
+				<!-- Right -->
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Vehicles.VehicleDef[defName="OTO_R3_106mm"]/components/li[key="RightArmorPlating"]/armor/ArmorRating_Sharp</xpath>
+					<value>
+						<ArmorRating_Sharp>17</ArmorRating_Sharp>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Vehicles.VehicleDef[defName="OTO_R3_106mm"]/components/li[key="RightArmorPlating"]/armor/ArmorRating_Blunt</xpath>
+					<value>
+						<ArmorRating_Blunt>310</ArmorRating_Blunt>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Vehicles.VehicleDef[defName="OTO_R3_106mm"]/components/li[key="RightArmorPlating"]/health</xpath>
+					<value>
+						<health>225</health>
+					</value>
+				</li>
+			
+			</operations>
+		</match>
+	</Operation>
+
+</Patch>
